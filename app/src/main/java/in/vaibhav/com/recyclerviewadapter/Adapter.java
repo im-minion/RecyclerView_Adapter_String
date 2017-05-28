@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,8 +16,6 @@ import android.widget.Toast;
  */
 
 public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-
-
     Context context;
     String[] items;
 
@@ -35,38 +34,39 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
-
         ((Item) holder).tv.setText(items[position]);
         //for setting onClicklistener
         ((Item) holder).btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "Clicked name is : " + ((Item) holder).tv.getText(), Toast.LENGTH_SHORT).show();
-
             }
         });
-
-
+        ((Item) holder).linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "Clicked name is : " + ((Item) holder).tv.getText(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-
         return items.length;//return no.of items
     }
 
     //Item class for recycler view holding purpose
 
     public class Item extends RecyclerView.ViewHolder {
-
         TextView tv;
         Button btn;
+        LinearLayout linearLayout;
 
         public Item(View itemView) {
             super(itemView);
             tv = (TextView) itemView.findViewById(R.id.item);
             btn = (Button) itemView.findViewById(R.id.btn);
-
+            linearLayout = (LinearLayout) itemView.findViewById(R.id.each_item);
         }
     }
 }

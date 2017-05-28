@@ -55,18 +55,18 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return items.length;//return no.of items
     }
 
-    //Item class for recycler view holding purpose
 
-    public class Item extends RecyclerView.ViewHolder {
-        TextView tv;
-        Button btn;
-        LinearLayout linearLayout;
-
-        public Item(View itemView) {
-            super(itemView);
-            tv = (TextView) itemView.findViewById(R.id.item);
-            btn = (Button) itemView.findViewById(R.id.btn);
-            linearLayout = (LinearLayout) itemView.findViewById(R.id.each_item);
-        }
-    }
+//
+//    public class Item extends RecyclerView.ViewHolder {
+//        TextView tv;
+//        Button btn;
+//        LinearLayout linearLayout;
+//
+//        public Item(View itemView) {
+//            super(itemView);
+//            tv = (TextView) itemView.findViewById(R.id.item);
+//            btn = (Button) itemView.findViewById(R.id.btn);
+//            linearLayout = (LinearLayout) itemView.findViewById(R.id.each_item);
+//        }
+//    }
 }

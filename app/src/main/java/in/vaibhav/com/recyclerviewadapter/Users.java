@@ -5,13 +5,11 @@ package in.vaibhav.com.recyclerviewadapter;
  */
 public class Users {
 
-    Users(){
-
+    Users() {
     }
 
-    public static String[] getUsers(){
-        String[] Item = {"vpm","vbs","cp","pk","ah","dv"};
+    public static String[] getUsers() {
+        String[] Item = {"vpm", "vbs", "cp", "pk", "ah", "dv"};
         return Item;
     }
-
 }

@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,16 +34,18 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
 
         ((Item) holder).tv.setText(items[position]);
         //for setting onClicklistener
         ((Item) holder).btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Podition is : " + position, Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Clicked name is : " + ((Item) holder).tv.getText(), Toast.LENGTH_SHORT).show();
+
             }
         });
+
 
     }
 
@@ -61,7 +64,6 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         public Item(View itemView) {
             super(itemView);
-
             tv = (TextView) itemView.findViewById(R.id.item);
             btn = (Button) itemView.findViewById(R.id.btn);
 
